@@ -1,23 +1,36 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Materialize CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>single-SPA</title>
+  <link rel="stylesheet" type=text/css href="src/assets/styles/reset.css">
 </head>
-
+<script type="text/javascript">
+  (function (doc, win) {
+    var docEl = doc.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+      };
+    if (!doc.addEventListener) {
+      return;
+    }
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+    recalc()
+  })(document, window)
+</script>
 <body>
-  <!-- single-spa apps -->
-  <div id="navBar"></div>
-  <div id="home"></div>
-  <div id="angularJS"></div>
-
-  <!-- Jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!-- Materialize -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  <!-- connect to the single-spa config file -->
-  <script src="dist/single-spa.config.js"></script>
+    <div id="home"></div>
+    <div id="vue"></div>
+    <div id="test"></div>
+    <div id="register"></div>
+    
+    
 </body>
 
+<script src="/dist/app.js"></script>
 </html>
